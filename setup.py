@@ -6,11 +6,40 @@
     PyScaffold helps you to put up the scaffold of your new Python project.
     Learn more under: https://pyscaffold.org/
 """
-from setuptools import setup
+from setuptools import setup, find_packages
 
 if __name__ == "__main__":
+
+    __version__ = "0.0.1"
+
     try:
-        setup(use_scm_version={"version_scheme": "no-guess-dev"})
+        setup(
+            name="bollama",
+            version=__version__,
+            description="Natural Language interface to Bayesian Optimization in Chemistry",
+            author="Bojana Rankovic & Andres M Bran",
+            author_email="bojana.rankovic@epfl.ch",
+            url="https://github.com/doncamilom/BoLLaMa",
+            license="MIT",
+            packages=find_packages(),
+            install_requires=[
+                "rdkit",
+                "paper-qa",
+                "google-search-results",
+                "pandas",
+                "nest_asyncio",
+                "ipywidgets",
+                "ipykernel"
+            ],
+            test_suite="tests",
+            #long_description=long_description,
+            long_description_content_type="text/markdown",
+            classifiers=[
+                "Programming Language :: Python :: 3",
+                "License :: OSI Approved :: MIT License",
+                "Operating System :: OS Independent",
+            ],
+        )
     except:  # noqa
         print(
             "\n\nAn error occurred while building the project, "
