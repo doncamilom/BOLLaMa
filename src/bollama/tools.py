@@ -18,7 +18,7 @@ class BOTools:
             ),
             agents.Tool(
                 name = "Propose next experiment.",
-                func = bofuncs.optimize_step,
+                func = bofuncs.optimization_step,
                 description = (
                     "Useful to propose the next experiment on the optimization loop. "\
                     "Takes as input a dictionary. The keys are eperimental conditions "

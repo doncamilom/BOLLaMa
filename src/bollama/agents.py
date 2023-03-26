@@ -42,4 +42,4 @@ class BOAgent:
         )
 
     def run(self, prompt):
-        return self.agent.run(input=prompt)
+        return self.agent.run(prompt)
