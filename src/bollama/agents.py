@@ -12,11 +12,13 @@ class BOAgent:
     def __init__(
             self,
             tools,
+            memory,
             model="text-davinci-003",
             temp=0.1,
-            max_steps=30
+            max_steps=30,
     ):
         self.openai_key = os.getenv("OPENAI_API_KEY")
+        self.memory = memory
 
         # Initialize LLM
         if model.startswith("gpt-3.5-turbo") or model.startswith("gpt-4"):
@@ -38,7 +40,8 @@ class BOAgent:
             self.llm,
             agent="conversational-react-description",
             verbose=True,
-            max_iterations=max_steps
+            max_iterations=max_steps,
+            memory=self.memory
         )
 
     def run(self, prompt):

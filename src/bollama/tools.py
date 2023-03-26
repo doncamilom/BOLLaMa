@@ -26,14 +26,4 @@ class BOTools:
                     "This outputs a suggested next experiment. "
                 )
             ),
-            agents.Tool(
-                name = "Get user input.",
-                func = input,
-                description = (
-                    "Request anything from the user. "
-                    "Useful when you want to get the results from an experiment. "
-                    "Ask a specific question."
-                    "Ask the user if they want to finish the loop before you do it. "
-                )
-            )
         ]
