@@ -18,7 +18,7 @@ custom_css = """
   .fixed-size-box {
     color: #00ff00 !important;
     width: 100%;
-    height: 700px;
+    height: 600px;
     overflow: auto;
     padding: 10px;
   }
@@ -60,18 +60,11 @@ carlos = BOAgent(
 )
 
 
-with gr.Blocks(
-        theme=gr.themes.Base(primary_hue="red", secondary_hue="pink"),
-        css=custom_css
-) as demo:
+with gr.Blocks(theme=gr.themes.Soft(primary_hue=gr.themes.colors.green,secondary_hue=gr.themes.colors.green),css=custom_css) as demo:
     with gr.Row():
         with gr.Column():
-            gr.Markdown("# This is the logger.")
-            def test(x):
-                print("This is a test")
-                print(f"Your function is running with input {x}...")
-                return x
 
+            gr.Markdown("## This is what the model is thinking 👀")
             def read_logs():
 
                 def convert_ansi_to_html(ansi_text):
@@ -81,7 +74,7 @@ with gr.Blocks(
 
                 # Read the ANSI formatted text from the file
                 with open('output.log', 'r') as f:
-                    ansi_text = f.read()[104:]
+                    ansi_text = f.read()[102:]
 
                 # Convert ANSI to HTML
                 html_text = convert_ansi_to_html(ansi_text)
@@ -97,6 +90,12 @@ with gr.Blocks(
 
 
         with gr.Column():
+
+            gr.Markdown(
+                "# Welcome to BOLLaMa!🦙😎\n"
+                "## Your AI sidekick for sustainable chemical optimization! ♻️🧪🌱"
+            )
+
             chatbot = gr.Chatbot()
             msg = gr.Textbox()
             clear = gr.Button("Clear")
@@ -115,9 +114,22 @@ with gr.Blocks(
             clear.click(lambda: None, None, chatbot, queue=False)
 
 
+    with gr.Row():
+        gr.Markdown("## Built with [Langchain](https://python.langchain.com/en/latest/modules/llms/getting_started.html) 🦜️🔗️ at [LIAC, EPFL](https://schwallergroup.github.io/).")
+
 
 
 demo.queue().launch(
+    #share=True,
     server_name='0.0.0.0',
-    server_port=8091
+    server_port=8090
 )
+
+
+Hi Bollama! I'm trying to set up an amination reaction and I would like to optimize the additives that I need to use for this reaction. Can you help?
+
+I haven't tried any additives yet. Can you suggest 4 initial experiments to start?
+
+great! okay so for the first one I got 8%, then 16%, then 2%, and then a very sad 0% :(
+
+

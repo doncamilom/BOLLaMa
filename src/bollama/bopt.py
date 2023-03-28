@@ -25,7 +25,7 @@ class LLMInterface:
                                             metric='euclidean', 
                                             n_clusters=int(n), 
                                             seed=0)
-        self.data = BOAdditivesDataModule('../data/additives_reactions.csv', 
+        self.data = BOAdditivesDataModule('data/additives_reactions.csv', 
                                             representation='fragprints', 
                                             featurize_column='Additive_Smiles', 
                                             init_sample_size=n,
