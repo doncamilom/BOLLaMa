@@ -1,4 +1,4 @@
-![build](https://github.com/schwallergroup/ChORISO/actions/workflows/ci.yml/badge.svg) [![DOI:10.1101/2020.07.15.204701](https://zenodo.org/badge/DOI/10.48550/arXiv.2306.06283.svg)](https://doi.org/10.48550/arXiv.2306.06283)
+![build](https://github.com/doncamilom/BOLLaMa/actions/workflows/ci.yml/badge.svg) [![DOI:10.1101/2020.07.15.204701](https://zenodo.org/badge/DOI/10.48550/arXiv.2306.06283.svg)](https://doi.org/10.48550/arXiv.2306.06283)
 
 
 <p align="center">
