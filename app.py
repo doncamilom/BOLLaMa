@@ -124,12 +124,3 @@ demo.queue().launch(
     server_name='0.0.0.0',
     server_port=8090
 )
-
-
-Hi Bollama! I'm trying to set up an amination reaction and I would like to optimize the additives that I need to use for this reaction. Can you help?
-
-I haven't tried any additives yet. Can you suggest 4 initial experiments to start?
-
-great! okay so for the first one I got 8%, then 16%, then 2%, and then a very sad 0% :(
-
-

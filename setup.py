@@ -24,12 +24,13 @@ if __name__ == "__main__":
             packages=find_packages(),
             install_requires=[
                 "rdkit",
-                "paper-qa",
-                "google-search-results",
                 "pandas",
                 "nest_asyncio",
-                "ipywidgets",
-                "ipykernel"
+                "gradio",
+                "ansi2html",
+                "langchain",
+                "openai",
+                "chaos @ git+https://github.com/schwallergroup/chaos.git@practical",
             ],
             test_suite="tests",
             #long_description=long_description,

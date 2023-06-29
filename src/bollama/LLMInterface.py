@@ -1,36 +1,38 @@
-from additive_bo.data_init_selection.clustering import BOInitDataSelection
-from additive_bo.bo.module import BoModule
-from additive_bo.data.module import BOAdditivesDataModule
-from additive_bo.surrogate_models.gp import GP
-from additive_bo.gprotorch.kernels.fingerprint_kernels.tanimoto_kernel import TanimotoKernel
+#from chaos.data_init_selection.clustering import BOInitDataSelection
+from chaos.initialization.initializers import BOInitializer
+from chaos.bo.module import BoModule
+from chaos.data.module import BOAdditivesDataModule
+from chaos.surrogate_models.gp import GP
+from chaos.gprotorch.kernels.fingerprint_kernels.tanimoto_kernel import TanimotoKernel
 import ast
 import torch
 from pytorch_lightning.loggers import WandbLogger
 from pytorch_lightning import Trainer
 
 class LLMInterface(object):
-    def __init__(self) -> None:        
+    def __init__(self) -> None:
         pass
-            
+
     def initialize(self, design_space='additives', n_initial_points=10):
-        initialization = BOInitDataSelection(init_method='believer-3', 
-                                             metric='euclidean', 
-                                             n_clusters=int(n_initial_points))
+        initialization = BOInitializer(
+            init_method='believer-3',
+            metric='euclidean',
+            n_clusters=int(n_initial_points)
+        )
         if design_space == 'additives':
-            self.data = BOAdditivesDataModule('data/additives_reactions.csv', 
-                                              representation='fragprints', 
-                                              featurize_column='Additive_Smiles', 
+            self.data = BOAdditivesDataModule('data/additives_reactions.csv',
+                                              representation='fragprints',
+                                              featurize_column='Additive_Smiles',
                                               init_sample_size=n_initial_points,
                                               init_selection_method=initialization)
-            
+
             selected_additives = self.data.additives_reactions['Additive_Smiles'].values[self.data.train_indexes].tolist()
         return selected_additives
-    
 
     def optimization_step(self, results_dict="{'CCc1ccc(cc1)C#C':1}"):
         # read dictionary
         # featurize and make arrays from init_data
-          
+
         results_dict = ast.literal_eval(results_dict)
         inputs, _ = zip(*results_dict.items())
 
