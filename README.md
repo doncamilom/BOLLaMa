@@ -2,7 +2,7 @@
 
 
 <p align="center">
-    <img src="bollama2-1.svg" width="100%"/>
+    <img src="assets/bollama2-1.svg" width="100%"/>
 </p>
 
 
