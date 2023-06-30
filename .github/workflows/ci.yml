@@ -70,6 +70,7 @@ jobs:
         with: {name: python-distribution-files, path: dist/}
       - name: Run tests
         run: >-
+          apt-get install gfortran libopenblas-dev liblapack-dev
           pipx run tox
           --installpkg '${{ needs.prepare.outputs.wheel-distribution }}'
           -- -rFEx --durations 10 --color yes
