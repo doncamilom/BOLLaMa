@@ -69,7 +69,7 @@ jobs:
         uses: actions/download-artifact@v3
         with: {name: python-distribution-files, path: dist/}
       - name: Install libraries
-        run: sudo apt-get install gfortran libopenblas-dev liblapack-dev
+        run: sudo apt-get install gfortran libopenblas-dev liblapack-dev build-essential
       - name: Run tests
         run: >-
           pipx run tox
