@@ -68,9 +68,10 @@ jobs:
       - name: Retrieve pre-built distribution files
         uses: actions/download-artifact@v3
         with: {name: python-distribution-files, path: dist/}
+      - name: Install libraries
+        run: sudo apt-get install gfortran libopenblas-dev liblapack-dev
       - name: Run tests
         run: >-
-          apt-get install gfortran libopenblas-dev liblapack-dev
           pipx run tox
           --installpkg '${{ needs.prepare.outputs.wheel-distribution }}'
           -- -rFEx --durations 10 --color yes
