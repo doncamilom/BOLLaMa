@@ -12,10 +12,10 @@ on:
     tags: ['v[0-9]*', '[0-9]+.[0-9]+*']  # Match tags that resemble a version
   pull_request:  # Run in every PR
   workflow_dispatch:  # Allow manually triggering the workflow
-  schedule:
+ # schedule:
     # Run roughly every 15 days at 00:00 UTC
     # (useful to check if updates on dependencies break the package)
-    - cron: '0 0 1,16 * *'
+ #   - cron: '0 0 1,16 * *'
 # Test mod
 
 concurrency:
