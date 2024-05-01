@@ -14,8 +14,7 @@ BOLLaMa, our AI-powered chatbot, simplifies the process of Bayesian Optimization
 
 
 https://github.com/doncamilom/BOLLaMa/assets/11743428/d0380795-0384-4941-a701-1a41555faa35
-
-
+The coolest llama! 😎
 
 ## 🚀 Installation
 
