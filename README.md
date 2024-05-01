@@ -10,6 +10,12 @@
 
 BOLLaMa, our AI-powered chatbot, simplifies the process of Bayesian Optimization for chemical reactions. It provides an easy-to-use interface that allows users to interact using natural language, removing the need for extensive programming knowledge or complex user interfaces. By offering a more approachable solution, BOLLaMa encourages the widespread adoption of sustainable optimization tools in the chemistry field.
 
+## 📽️ Demo
+
+
+https://github.com/doncamilom/BOLLaMa/assets/11743428/d0380795-0384-4941-a701-1a41555faa35
+
+
 
 ## 🚀 Installation
 
