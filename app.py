@@ -11,6 +11,10 @@ from langchain.utilities import SerpAPIWrapper
 from langchain.agents import initialize_agent
 from bollama import BOAgent, BOTools
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 gr.close_all()
 custom_css = """
@@ -120,7 +124,5 @@ with gr.Blocks(theme=gr.themes.Soft(primary_hue=gr.themes.colors.green,secondary
 
 
 demo.queue().launch(
-    #share=True,
-    server_name='0.0.0.0',
-    server_port=8090
+    server_port=5467
 )

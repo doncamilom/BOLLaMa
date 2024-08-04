@@ -28,12 +28,17 @@ if __name__ == "__main__":
                 "nest_asyncio",
                 "gradio",
                 "ansi2html",
-                "langchain",
-                "openai",
+                "langchain==0.0.173",
+                "openai<1.0.0",
                 "chaos @ git+https://github.com/schwallergroup/chaos.git@practical",
+                "python-dotenv",
             ],
+            extras_require={
+                'extras': [
+                    "graphein"
+                ],
+            },
             test_suite="tests",
-            #long_description=long_description,
             long_description_content_type="text/markdown",
             classifiers=[
                 "Programming Language :: Python :: 3",
