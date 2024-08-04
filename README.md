@@ -38,6 +38,8 @@ conda create -n bollama python=3.10 -y
 conda activate bollama
 pip install -e .
 pip install graphein
+pip install gradio
+
 ```
 
 ## 🔥 Quick start
